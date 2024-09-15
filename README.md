@@ -31,8 +31,8 @@ Place these files in the `InputFolder` specified in your `appsettings.json` file
 ```
 {
   "FilePaths": {
-    "InputFolder": "C:/PosData/Orders_Text/", // update to your desired path
-    "OutputFolder": "C:/PosData/Orders_Json/" // update to your desired path, default json folder will be generated.
+    "InputFolder": "C:/OrderData/Orders_Text/", // update to your desired path
+    "OutputFolder": "C:/OrderData/Orders_Json/" // update to your desired path, default json folder will be generated.
   },
   "Logging": {
     "LogLevel": {
