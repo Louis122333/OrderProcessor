@@ -27,6 +27,8 @@ namespace OrderProcessor.Services
                 return;
             }
 
+            EnsureDirectoryExists(outputFolder);
+
             var textFiles = Directory.GetFiles(inputFolder, "*.txt");
 
             foreach (var filePath in textFiles)
@@ -50,6 +52,15 @@ namespace OrderProcessor.Services
                 {
                     _logger.LogError(ex, $"Unexpected error processing file {Path.GetFileName(filePath)}");
                 }
+            }
+        }
+
+        private void EnsureDirectoryExists(string path)
+        {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+                _logger.LogInformation($"Created directory: {path}");
             }
         }
     }
